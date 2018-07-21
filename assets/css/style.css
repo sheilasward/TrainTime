@@ -1,0 +1,18 @@
+.jumbotron-color {
+    background: #999999;
+    color: white;
+    font-weight: bold;
+}
+.bold {
+    font-weight: bold;
+}
+.blue-background {
+    background: #5e98e9;
+    color: white;
+}
+.blue-border {
+    border: 1px solid #5e98e9;
+}
+.space {
+    margin-bottom: 10px;
+}
