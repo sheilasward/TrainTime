@@ -16,3 +16,6 @@
 .space {
     margin-bottom: 10px;
 }
+.border-bx {
+    box-sizing: border-box;
+}

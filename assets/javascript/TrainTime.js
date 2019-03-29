@@ -11,6 +11,10 @@ $(document).ready(function() {
     };
     firebase.initializeApp(config);
 
+    // Initialize DateTimePicker
+    $('#picker').dateTimePicker(); 
+
+
     // Define variable for Firebase Database
     var database = firebase.database(); 
 

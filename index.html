@@ -8,12 +8,19 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <!-- Bootstrap/CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/datetimepicker.css">
         <link rel="stylesheet" href="assets/css/style.css">
-        <!-- Script Tags for jQuery, popper, & Bootstrap -->
+        <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
+        
+
+        <!-- Script Tags for jQuery, popper, Bootstrap, & datetimepicker -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        <script src="assets/javascript/datetimepicker.js"></script>
+
     </head>
     <body>
         <header class="container text-center">
@@ -23,10 +30,13 @@
             </header>
         </header>
         <section class="container">
-            <div class="card blue-border"> 
-                <div class="card-header blue-background">
-                    <h5 class="float-left">Current Train Schedule</h5>
-                    <h5 class="float-right" id="curr-time"></h5>
+            <div class="card blue-border px-0 mx-0"> 
+                <div class="row card-header blue-background px-0 mx-0">
+                    <div class="col-lg-4 mx-0"><h5 mx-3>Current Train Schedule</h5></div>
+                    <div class="col-lg-4 text-center"><h5>GREENSBORO, NC</h5></div>
+                    <div class="col-lg-4 text-right"><h5 id="curr-time"></h5></div>
+ <!--                   <h5 class="float-left">Current Train Schedule</h5>
+                    <h5 class="float-right" id="curr-time"></h5>  -->
                 </div>
                 <table class="table table-bordered">
                     <thead>
@@ -58,8 +68,11 @@
                             <input type="text" class="form-control" id="destination">
                         </div>
                         <div class="form-group">
-                            <label for="firstTrainTime" class="bold container-fluid">First Train Time (Enter as: YYYYMMDDHHmm)</label>
-                            <input type="text" class="form-control" id="firstTrainTime">
+                            <label for="firstTrainTime" class="bold container-fluid">First Train Time </label>
+                            <div id="picker" class="form-control"> 
+                                <input type="hidden" id="firstTrainTime" class="form-control" value=""/>
+<!--                            <input type="text" class="form-control" id="firstTrainTime">   -->
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="frequency" class="bold container-fluid">Frequency (min)</label>
@@ -73,7 +86,8 @@
         <br><br>
         <!--  TrainTime Scripts  -->
         <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+        <!-- script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script  -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.0/moment-with-locales.min.js"></script>
         <!-- <script type="text/javascript" src="assets/javascript/TrainSeed.js"></script> -->
         <script type="text/javascript" src="assets/javascript/TrainTime.js"></script>
     </body>
