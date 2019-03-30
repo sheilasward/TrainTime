@@ -34,8 +34,17 @@ $(document).ready(function() {
         // Generate row of trains for each one in array
         for (var i=0; i < trains.length; i++) {
             // Make table row tag and 2 column tags
-            var row = $("<tr>");
-            var td1 = $("<td>").text(trains[i].name);
+            var row = $("<tr />");
+            var tName = trains[i].name;
+            console.log("train name = " + tName);
+            var td1 = $("<td>");
+            td1.text(tName);
+            td1.addClass("left-padding");
+            var span1 = $("<span>");
+            var i1 = $("<i>");           
+            i1.addClass("fa fa-trash-o");
+            span1.prepend(i1);
+            td1.prepend(span1);
             var td2 = $("<td>").text(trains[i].destination);
             // Calculate "Minutes Away" and "Next Arrival"
             var tFrequency = trains[i].frequency;
@@ -54,7 +63,7 @@ $(document).ready(function() {
             td5.addClass("minTillNxt" + i);  // Need to add 'i' in order to adjust minutes
             // Append table columns to table row, and append row to table body
             row.append(td1).append(td2).append(td3).append(td4).append(td5);
-            $("tbody").append(row);
+            $('tbody').append(row);
         }
     }
 
@@ -80,6 +89,20 @@ $(document).ready(function() {
         renderTrains();
         // Clear values from text-boxes
         $("#train-form").get(0).reset();
+    });
+
+    // Procedure for when train is deleted
+    // Click on trash can to delete table row
+    $("tbody").on("click", "span",function(e) {
+        $(this).parent().parent().fadeOut(500, function() {
+            $(this).remove;
+        });
+        e.stopPropagation();
+        // Now delete train from database
+        //var train = $(this).name();
+        //console.log("before: " + trains);
+        //trains.pop(train);
+        //console.log("after: " + trains);
     });
 
     // Every minute, change the time and update "Minutes Away" column

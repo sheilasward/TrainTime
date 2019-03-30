@@ -19,3 +19,43 @@
 .border-bx {
     box-sizing: border-box;
 }
+
+tr {
+    height: 40px!important;
+    padding: 0;
+    margin: 0;
+}
+
+td {
+    background-color: white;
+    height: 40px;
+    padding: 0 12px!important;
+    margin: 0;
+    margin-right: 0px;
+    line-height: 40px;
+    color: black;
+    font-weight: 500;
+}
+
+.left-padding {
+    padding-left: 0!important;
+}
+
+td span {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: white;
+    height: 40px;
+    width: 0;
+    margin-right: 20px;
+    text-align: center;
+    transition: 0.2s linear;
+    opacity: 0;
+ }
+
+td:hover span {
+    width: 40px;
+    opacity: 1;
+}
+
+
